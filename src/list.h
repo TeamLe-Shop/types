@@ -42,6 +42,19 @@
     l->list[l->size] = object; \
     l->size++
 
+#define List_Pop(l) \
+    l->list = realloc(l->list, (l->size-1) * sizeof(*(l->list))); \
+    l->size--;
+
+/* Erase the element at `index`. */
+#define List_Erase(l, index) \
+    if (index != l->size - 1) { \
+        memmove(&l->list[index], &l->list[index + 1], \
+                ((l->size - 1 - index) * sizeof(*(l->list)))); \
+    } \
+    List_Pop(l)
+
+
 #define List_Destroy(l) \
     if (l->function != NULL) { \
         l->function(l, sizeof(*(l->list))); \
