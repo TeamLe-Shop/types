@@ -19,8 +19,6 @@ void FreeMemory(void* l, size_t typesize)
     ListStruct(char*)* x = l;
 
     for (size_t i = 0; i < x->size; i++) {
-        printf("Hey! I'm freeing something!\n");
-        printf("%s\n", x->list[i]);
         free(x->list[i]);
     }
 }
