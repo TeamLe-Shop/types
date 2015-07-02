@@ -12,8 +12,6 @@
  * functions.
  */
 
-void* list = NULL;
-
 void FreeMemory(void* l, size_t typesize)
 {
     ListStruct(char*)* x = l;
