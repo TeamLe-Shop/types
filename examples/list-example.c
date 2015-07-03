@@ -6,10 +6,10 @@
 
 int main()
 {
-    List(double, mylist, NULL);
-    List_Add(mylist, 2.54);
-    List_Add(mylist, 3.14);
-    List_Add(mylist, 7.16);
+    List(double, mylist);
+    List_Append(mylist, 2.54);
+    List_Append(mylist, 3.14);
+    List_Append(mylist, 7.16);
 
     double sum = 0;
 
