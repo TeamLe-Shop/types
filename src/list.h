@@ -13,6 +13,17 @@
         void (*handler_erase)(void*, size_t); \
     }
 
+
+/* This is a List initialisation macro for existing List objects. Use this to
+ * initialise List objects created with ListStruct.
+ */
+#define ListInit(l, destroy, erase) \
+    l = malloc(ListSize); \
+    l->list = NULL; \
+    l->size = 0; \
+    l->handler_destroy = NULL; \
+    l->handler_erase = NULL;
+
 #define ListSize sizeof(ListStruct(void))
 
 /* This creates a new anonymous structure with a `type` pointer and allocates
